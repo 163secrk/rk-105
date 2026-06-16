@@ -77,3 +77,20 @@ CREATE TABLE IF NOT EXISTS res_project (
     create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
     update_time DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+-- 指派记录表
+CREATE TABLE IF NOT EXISTS res_assignment (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    talent_id INTEGER NOT NULL,
+    talent_name VARCHAR(50),
+    project_id INTEGER NOT NULL,
+    project_name VARCHAR(100),
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    unit_price DECIMAL(12,2) NOT NULL,
+    talent_level VARCHAR(20),
+    status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE',
+    remark TEXT,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP
+);
