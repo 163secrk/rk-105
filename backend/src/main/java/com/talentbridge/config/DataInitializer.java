@@ -1,17 +1,13 @@
 package com.talentbridge.config;
 
-import com.talentbridge.entity.Menu;
-import com.talentbridge.entity.Role;
-import com.talentbridge.entity.User;
 import com.talentbridge.mapper.MenuMapper;
 import com.talentbridge.mapper.UserMapper;
+import com.talentbridge.mapper.ProjectPmMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Slf4j
 @Component
@@ -21,6 +17,7 @@ public class DataInitializer implements CommandLineRunner {
     private final UserMapper userMapper;
     private final MenuMapper menuMapper;
     private final PasswordEncoder passwordEncoder;
+    private final ProjectPmMapper projectPmMapper;
 
     @Override
     public void run(String... args) {
@@ -28,6 +25,7 @@ public class DataInitializer implements CommandLineRunner {
         initMenus();
         initUsers();
         initRoleMenus();
+        initProjectPm();
         log.info("数据初始化完成");
     }
 
@@ -115,5 +113,13 @@ public class DataInitializer implements CommandLineRunner {
         menuMapper.insertRoleMenu(5L, 6L);
 
         log.info("角色菜单关联数据初始化完成");
+    }
+
+    private void initProjectPm() {
+        if (projectPmMapper.count() > 0) {
+            return;
+        }
+        projectPmMapper.insert(1L, 4L);
+        log.info("项目PM关联数据初始化完成");
     }
 }

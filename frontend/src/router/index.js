@@ -51,7 +51,21 @@ const routes = [
         path: 'timesheet',
         name: 'ReportApproval',
         component: () => import('@/views/report/ReportApproval.vue'),
-        meta: { title: '报工审批' }
+        meta: { title: '报工审批' },
+        children: [
+          {
+            path: 'calendar',
+            name: 'EmployeeCalendar',
+            component: () => import('@/views/report/EmployeeCalendar.vue'),
+            meta: { title: '工时填报' }
+          },
+          {
+            path: 'approval',
+            name: 'ApprovalList',
+            component: () => import('@/views/report/ApprovalList.vue'),
+            meta: { title: '工时审批' }
+          }
+        ]
       },
       {
         path: 'finance',

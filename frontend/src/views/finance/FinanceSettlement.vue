@@ -3,13 +3,13 @@
     <a-card :bordered="false" class="page-card">
       <template #title>
         <div class="card-title">
-          <icon-money-circle class="title-icon" />
+          <icon-apps class="title-icon" />
           <span>财务结算</span>
         </div>
       </template>
       <div class="placeholder-content">
         <div class="placeholder-icon">
-          <icon-money-circle />
+          <icon-apps />
         </div>
         <h3>财务结算 - 开发中</h3>
         <p>账单管理与财务结算</p>
@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import { IconMoneyCircle } from '@arco-design/web-vue/es/icon'
+import { IconApps } from '@arco-design/web-vue/es/icon'
 </script>
 
 <style scoped>

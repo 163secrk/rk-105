@@ -94,3 +94,38 @@ CREATE TABLE IF NOT EXISTS res_assignment (
     create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
     update_time DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+-- 工时单表
+CREATE TABLE IF NOT EXISTS ts_timesheet (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    user_name VARCHAR(50),
+    talent_id INTEGER,
+    talent_name VARCHAR(50),
+    project_id INTEGER NOT NULL,
+    project_name VARCHAR(100),
+    month VARCHAR(7) NOT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'DRAFT',
+    approver_id INTEGER,
+    approver_name VARCHAR(50),
+    approve_time DATETIME,
+    reject_reason TEXT,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 工时单每日明细表
+CREATE TABLE IF NOT EXISTS ts_timesheet_day (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    timesheet_id INTEGER NOT NULL,
+    day_date DATE NOT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'NORMAL'
+);
+
+-- 项目PM关联表
+CREATE TABLE IF NOT EXISTS res_project_pm (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    project_id INTEGER NOT NULL,
+    pm_user_id INTEGER NOT NULL,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP
+);

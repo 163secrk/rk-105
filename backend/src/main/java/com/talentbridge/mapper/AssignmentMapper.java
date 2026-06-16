@@ -3,7 +3,6 @@ package com.talentbridge.mapper;
 import com.talentbridge.entity.Assignment;
 import org.apache.ibatis.annotations.*;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Mapper
@@ -20,6 +19,9 @@ public interface AssignmentMapper {
 
     @Select("SELECT * FROM res_assignment WHERE talent_id = #{talentId} AND status = 'ACTIVE' AND id != #{excludeId}")
     List<Assignment> findActiveByTalentIdExclude(@Param("talentId") Long talentId, @Param("excludeId") Long excludeId);
+
+    @Select("SELECT * FROM res_assignment WHERE talent_name = #{talentName} AND status = 'ACTIVE'")
+    List<Assignment> findActiveByTalentName(String talentName);
 
     @Insert("INSERT INTO res_assignment (talent_id, talent_name, project_id, project_name, start_date, end_date, unit_price, talent_level, status, remark) " +
             "VALUES (#{talentId}, #{talentName}, #{projectId}, #{projectName}, #{startDate}, #{endDate}, #{unitPrice}, #{talentLevel}, #{status}, #{remark})")
