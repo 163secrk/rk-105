@@ -110,9 +110,32 @@ const openKeys = ref([])
 const menuList = computed(() => userStore.menuList)
 const userInfo = computed(() => userStore.userInfo)
 
-const selectedKey = computed(() => route.path)
+const selectedKey = computed(() => {
+  return route.path
+})
 
-const currentPageTitle = computed(() => route.meta.title || '')
+const currentPageTitle = computed(() => {
+  const matched = route.matched
+  for (let i = matched.length - 1; i >= 0; i--) {
+    if (matched[i].meta && matched[i].meta.title) {
+      return matched[i].meta.title
+    }
+  }
+  return ''
+})
+
+function computeOpenKeys(menus, targetPath, parents = []) {
+  for (const menu of menus) {
+    if (menu.key === targetPath) {
+      return parents
+    }
+    if (menu.children && menu.children.length) {
+      const found = computeOpenKeys(menu.children, targetPath, [...parents, menu.key])
+      if (found) return found
+    }
+  }
+  return null
+}
 
 const iconMap = {
   Dashboard: IconDashboard,
@@ -159,12 +182,20 @@ onMounted(() => {
     userStore.fetchUserInfo().catch(() => {})
   }
   if (!userStore.menuList || userStore.menuList.length === 0) {
-    userStore.fetchMenuList().catch(() => {})
+    userStore.fetchMenuList().then(() => {
+      const keys = computeOpenKeys(userStore.menuList, route.path)
+      if (keys) openKeys.value = keys
+    }).catch(() => {})
+  } else {
+    const keys = computeOpenKeys(userStore.menuList, route.path)
+    if (keys) openKeys.value = keys
   }
 })
 
-watch(() => route.path, () => {
+watch(() => route.path, (newPath) => {
   document.title = `${currentPageTitle.value} - Talent-Bridge 人才外派协同平台`
+  const keys = computeOpenKeys(userStore.menuList, newPath)
+  if (keys) openKeys.value = keys
 })
 </script>
 

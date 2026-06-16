@@ -48,12 +48,13 @@ public class DataInitializer implements CommandLineRunner {
             return;
         }
         menuMapper.insertWithId(1L, "工作台", "/dashboard", "Dashboard", 0L, 1);
-        menuMapper.insertWithId(2L, "资源管理", "/resource", "User", 0L, 2);
-        menuMapper.insertWithId(3L, "项目池", "/project", "Briefcase", 0L, 3);
-        menuMapper.insertWithId(4L, "指派中心", "/assignment", "ClipboardList", 0L, 4);
-        menuMapper.insertWithId(5L, "报工审批", "/timesheet", "FileText", 0L, 5);
-        menuMapper.insertWithId(6L, "财务结算", "/finance", "DollarSign", 0L, 6);
-        menuMapper.insertWithId(7L, "系统设置", "/settings", "Settings", 0L, 7);
+        menuMapper.insertWithId(2L, "资源中心", "/resource", "User", 0L, 2);
+        menuMapper.insertWithId(3L, "人才库", "/resource/talent", "User", 2L, 1);
+        menuMapper.insertWithId(4L, "项目池", "/resource/project", "Briefcase", 2L, 2);
+        menuMapper.insertWithId(5L, "指派中心", "/assignment", "ClipboardList", 0L, 3);
+        menuMapper.insertWithId(6L, "报工审批", "/timesheet", "FileText", 0L, 4);
+        menuMapper.insertWithId(7L, "财务结算", "/finance", "DollarSign", 0L, 5);
+        menuMapper.insertWithId(8L, "系统设置", "/settings", "Settings", 0L, 6);
         log.info("菜单数据初始化完成");
     }
 
@@ -93,22 +94,25 @@ public class DataInitializer implements CommandLineRunner {
         menuMapper.insertRoleMenu(1L, 5L);
         menuMapper.insertRoleMenu(1L, 6L);
         menuMapper.insertRoleMenu(1L, 7L);
+        menuMapper.insertRoleMenu(1L, 8L);
 
         menuMapper.insertRoleMenu(2L, 1L);
         menuMapper.insertRoleMenu(2L, 2L);
         menuMapper.insertRoleMenu(2L, 3L);
         menuMapper.insertRoleMenu(2L, 4L);
+        menuMapper.insertRoleMenu(2L, 5L);
 
         menuMapper.insertRoleMenu(3L, 1L);
-        menuMapper.insertRoleMenu(3L, 5L);
         menuMapper.insertRoleMenu(3L, 6L);
+        menuMapper.insertRoleMenu(3L, 7L);
 
         menuMapper.insertRoleMenu(4L, 1L);
-        menuMapper.insertRoleMenu(4L, 3L);
-        menuMapper.insertRoleMenu(4L, 5L);
+        menuMapper.insertRoleMenu(4L, 2L);
+        menuMapper.insertRoleMenu(4L, 4L);
+        menuMapper.insertRoleMenu(4L, 6L);
 
         menuMapper.insertRoleMenu(5L, 1L);
-        menuMapper.insertRoleMenu(5L, 5L);
+        menuMapper.insertRoleMenu(5L, 6L);
 
         log.info("角色菜单关联数据初始化完成");
     }

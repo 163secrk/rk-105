@@ -50,14 +50,43 @@ export const useUserStore = defineStore('user', () => {
 
   async function fetchMenuList() {
     const res = await getMenuListApi()
-    const menus = res.data.map(item => ({
+    const rawList = res.data
+    const flatList = rawList.map(item => ({
+      id: item.id,
       key: item.menuPath,
       title: item.menuName,
       icon: item.menuIcon,
-      path: item.menuPath
+      path: item.menuPath,
+      parentId: item.parentId,
+      sortOrder: item.sortOrder
     }))
+    const menus = buildMenuTree(flatList, rawList)
     setMenuList(menus)
     return menus
+  }
+
+  function buildMenuTree(flatList, rawList) {
+    const map = {}
+    const roots = []
+    flatList.forEach(item => {
+      map[item.id] = { ...item, children: [] }
+    })
+    flatList.forEach(item => {
+      const node = map[item.id]
+      if (item.parentId && item.parentId !== 0 && map[item.parentId]) {
+        map[item.parentId].children.push(node)
+      } else {
+        roots.push(node)
+      }
+    })
+    const sortTree = (nodes) => {
+      nodes.sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0))
+      nodes.forEach(n => {
+        if (n.children && n.children.length) sortTree(n.children)
+      })
+    }
+    sortTree(roots)
+    return roots
   }
 
   function logout() {

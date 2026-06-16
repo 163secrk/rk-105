@@ -22,15 +22,24 @@ const routes = [
       },
       {
         path: 'resource',
-        name: 'ResourceManage',
+        name: 'ResourceCenter',
+        redirect: '/resource/talent',
         component: () => import('@/views/resource/ResourceManage.vue'),
-        meta: { title: '资源管理' }
-      },
-      {
-        path: 'project',
-        name: 'ProjectPool',
-        component: () => import('@/views/project/ProjectPool.vue'),
-        meta: { title: '项目池' }
+        meta: { title: '资源中心' },
+        children: [
+          {
+            path: 'talent',
+            name: 'TalentPool',
+            component: () => import('@/views/resource/TalentPool.vue'),
+            meta: { title: '人才库' }
+          },
+          {
+            path: 'project',
+            name: 'ResourceProject',
+            component: () => import('@/views/resource/ProjectPool.vue'),
+            meta: { title: '项目池' }
+          }
+        ]
       },
       {
         path: 'assignment',

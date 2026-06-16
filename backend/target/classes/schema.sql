@@ -46,3 +46,34 @@ CREATE TABLE IF NOT EXISTS sys_role_menu (
     menu_id INTEGER NOT NULL,
     create_time DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+-- 人才表
+CREATE TABLE IF NOT EXISTS res_talent (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(50) NOT NULL,
+    gender VARCHAR(10),
+    phone VARCHAR(20),
+    email VARCHAR(100),
+    level VARCHAR(20) NOT NULL,
+    monthly_salary DECIMAL(12,2),
+    tech_stack TEXT,
+    status VARCHAR(20) NOT NULL DEFAULT 'IDLE',
+    remark TEXT,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 项目表
+CREATE TABLE IF NOT EXISTS res_project (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    project_name VARCHAR(100) NOT NULL,
+    client_name VARCHAR(100),
+    contact_person VARCHAR(50),
+    contact_phone VARCHAR(20),
+    price_junior DECIMAL(12,2),
+    price_middle DECIMAL(12,2),
+    price_senior DECIMAL(12,2),
+    remark TEXT,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP
+);

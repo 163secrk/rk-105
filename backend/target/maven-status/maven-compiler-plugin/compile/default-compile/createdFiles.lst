@@ -16,6 +16,7 @@ com\talentbridge\entity\Menu.class
 com\talentbridge\entity\User.class
 com\talentbridge\exception\GlobalExceptionHandler.class
 com\talentbridge\dto\LoginRequest.class
+com\talentbridge\entity\Project.class
 com\talentbridge\service\impl\MenuServiceImpl.class
 com\talentbridge\mapper\UserMapper.class
 com\talentbridge\service\MenuService.class

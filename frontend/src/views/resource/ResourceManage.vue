@@ -1,70 +1,63 @@
 <template>
-  <div class="page-container">
-    <a-card :bordered="false" class="page-card">
-      <template #title>
-        <div class="card-title">
-          <icon-user class="title-icon" />
-          <span>资源管理</span>
-        </div>
-      </template>
-      <div class="placeholder-content">
-        <div class="placeholder-icon">
-          <icon-user />
-        </div>
-        <h3>资源管理 - 开发中</h3>
-        <p>人才资源池管理与维护</p>
-      </div>
-    </a-card>
+  <div class="resource-center">
+    <a-tabs
+      v-model:active-key="activeTab"
+      type="rounded"
+      @change="handleTabChange"
+      class="resource-tabs"
+    >
+      <a-tab-pane key="/resource/talent" title="人才库" />
+      <a-tab-pane key="/resource/project" title="项目池" />
+    </a-tabs>
+    <div class="tab-content">
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script setup>
-import { IconUser } from '@arco-design/web-vue/es/icon'
+import { ref, watch, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+
+const route = useRoute()
+const router = useRouter()
+
+const activeTab = ref('/resource/talent')
+
+function syncTab() {
+  const path = route.path
+  if (path.startsWith('/resource/project')) {
+    activeTab.value = '/resource/project'
+  } else {
+    activeTab.value = '/resource/talent'
+  }
+}
+
+function handleTabChange(key) {
+  if (route.path !== key) {
+    router.push(key)
+  }
+}
+
+onMounted(() => {
+  syncTab()
+})
+
+watch(() => route.path, () => {
+  syncTab()
+})
 </script>
 
 <style scoped>
-.page-container {
+.resource-center {
   width: 100%;
 }
 
-.page-card {
-  border-radius: 8px;
+.resource-tabs {
+  margin-bottom: 16px;
 }
 
-.card-title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.title-icon {
-  color: #165DFF;
-  font-size: 20px;
-}
-
-.placeholder-content {
-  padding: 80px 0;
-  text-align: center;
-  color: #86909c;
-}
-
-.placeholder-icon {
-  font-size: 64px;
-  color: #c9cdd4;
-  margin-bottom: 20px;
-}
-
-.placeholder-content h3 {
-  color: #4e5969;
-  margin: 0 0 12px 0;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.placeholder-content p {
-  margin: 0;
-  font-size: 14px;
+.tab-content {
+  width: 100%;
 }
 </style>
