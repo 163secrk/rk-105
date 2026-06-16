@@ -42,4 +42,7 @@ public interface TimesheetMapper {
             "INNER JOIN res_project_pm ppm ON t.project_id = ppm.project_id " +
             "WHERE ppm.pm_user_id = #{pmUserId} ORDER BY t.month DESC")
     List<Timesheet> findByPmUserId(@Param("pmUserId") Long pmUserId);
+
+    @Select("SELECT * FROM ts_timesheet WHERE month = #{month} AND status = 'APPROVED'")
+    List<Timesheet> findApprovedByMonth(String month);
 }

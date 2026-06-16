@@ -144,6 +144,8 @@ const iconMap = {
   ClipboardList: IconCalendar,
   FileText: IconFile,
   DollarSign: IconApps,
+  File: IconFile,
+  CalendarClock: IconCalendar,
   Settings: IconSettings
 }
 

@@ -1,5 +1,6 @@
 package com.talentbridge.config;
 
+import com.talentbridge.entity.Menu;
 import com.talentbridge.mapper.MenuMapper;
 import com.talentbridge.mapper.UserMapper;
 import com.talentbridge.mapper.ProjectPmMapper;
@@ -26,6 +27,7 @@ public class DataInitializer implements CommandLineRunner {
         initUsers();
         initRoleMenus();
         initProjectPm();
+        initFinanceSubMenus();
         log.info("数据初始化完成");
     }
 
@@ -121,5 +123,31 @@ public class DataInitializer implements CommandLineRunner {
         }
         projectPmMapper.insert(1L, 4L);
         log.info("项目PM关联数据初始化完成");
+    }
+
+    private void initFinanceSubMenus() {
+        Menu parent = menuMapper.findById(7L);
+        if (parent == null) {
+            return;
+        }
+        Menu existing1 = menuMapper.findById(9L);
+        if (existing1 == null) {
+            menuMapper.insertWithId(9L, "对账单管理", "/finance/settlement", "File", 7L, 1);
+        }
+        Menu existing2 = menuMapper.findById(10L);
+        if (existing2 == null) {
+            menuMapper.insertWithId(10L, "工作日设置", "/finance/workday", "CalendarClock", 7L, 2);
+        }
+        if (menuMapper.countRoleMenus() > 0) {
+            if (menuMapper.findMenusByUserId(1L).stream().noneMatch(m -> m.getId() != null && m.getId().equals(9L))) {
+                menuMapper.insertRoleMenu(1L, 9L);
+                menuMapper.insertRoleMenu(1L, 10L);
+            }
+            if (menuMapper.findMenusByUserId(3L).stream().noneMatch(m -> m.getId() != null && m.getId().equals(9L))) {
+                menuMapper.insertRoleMenu(3L, 9L);
+                menuMapper.insertRoleMenu(3L, 10L);
+            }
+        }
+        log.info("财务子菜单数据初始化完成");
     }
 }

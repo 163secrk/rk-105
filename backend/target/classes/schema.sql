@@ -129,3 +129,50 @@ CREATE TABLE IF NOT EXISTS res_project_pm (
     pm_user_id INTEGER NOT NULL,
     create_time DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+-- 法定工作日设置表
+CREATE TABLE IF NOT EXISTS fin_workday_setting (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    month VARCHAR(7) NOT NULL UNIQUE,
+    workday_count INTEGER NOT NULL,
+    remark VARCHAR(200),
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 结算单主表
+CREATE TABLE IF NOT EXISTS fin_settlement (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    settlement_no VARCHAR(32) NOT NULL UNIQUE,
+    month VARCHAR(7) NOT NULL,
+    workday_count INTEGER NOT NULL,
+    total_amount DECIMAL(14,2) NOT NULL DEFAULT 0,
+    item_count INTEGER NOT NULL DEFAULT 0,
+    status VARCHAR(20) NOT NULL DEFAULT 'GENERATED',
+    creator_id INTEGER,
+    creator_name VARCHAR(50),
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 结算明细表（含快照）
+CREATE TABLE IF NOT EXISTS fin_settlement_item (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    settlement_id INTEGER NOT NULL,
+    timesheet_id INTEGER NOT NULL,
+    user_id INTEGER,
+    user_name VARCHAR(50),
+    talent_id INTEGER,
+    talent_name VARCHAR(50),
+    project_id INTEGER,
+    project_name VARCHAR(100),
+    unit_price_snapshot DECIMAL(12,2) NOT NULL,
+    workday_count_snapshot INTEGER NOT NULL,
+    actual_attendance_days INTEGER NOT NULL DEFAULT 0,
+    overtime_days INTEGER NOT NULL DEFAULT 0,
+    overtime_amount DECIMAL(12,2) NOT NULL DEFAULT 0,
+    base_amount DECIMAL(12,2) NOT NULL DEFAULT 0,
+    final_amount DECIMAL(12,2) NOT NULL DEFAULT 0,
+    calc_detail VARCHAR(500),
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP
+);

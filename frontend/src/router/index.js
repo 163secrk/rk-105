@@ -70,8 +70,29 @@ const routes = [
       {
         path: 'finance',
         name: 'FinanceSettlement',
+        redirect: '/finance/settlement',
         component: () => import('@/views/finance/FinanceSettlement.vue'),
-        meta: { title: '财务结算' }
+        meta: { title: '财务结算' },
+        children: [
+          {
+            path: 'workday',
+            name: 'WorkdaySetting',
+            component: () => import('@/views/finance/WorkdaySetting.vue'),
+            meta: { title: '工作日设置' }
+          },
+          {
+            path: 'settlement',
+            name: 'SettlementList',
+            component: () => import('@/views/finance/SettlementList.vue'),
+            meta: { title: '对账单管理' }
+          },
+          {
+            path: 'settlement/detail/:id',
+            name: 'SettlementDetail',
+            component: () => import('@/views/finance/SettlementDetail.vue'),
+            meta: { title: '对账单详情' }
+          }
+        ]
       },
       {
         path: 'settings',

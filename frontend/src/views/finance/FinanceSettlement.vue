@@ -1,34 +1,97 @@
 <template>
-  <div class="page-container">
-    <a-card :bordered="false" class="page-card">
+  <div class="finance-container">
+    <a-card :bordered="false" class="finance-card">
       <template #title>
-        <div class="card-title">
-          <icon-apps class="title-icon" />
-          <span>财务结算</span>
+        <div class="card-header">
+          <div class="card-title">
+            <icon-apps class="title-icon" />
+            <span>财务结算</span>
+          </div>
         </div>
       </template>
-      <div class="placeholder-content">
-        <div class="placeholder-icon">
-          <icon-apps />
-        </div>
-        <h3>财务结算 - 开发中</h3>
-        <p>账单管理与财务结算</p>
+
+      <a-tabs v-model:active-key="activeTab" @change="handleTabChange">
+        <a-tab-pane key="settlement" title="对账单管理">
+          <template #title>
+            <div class="tab-title">
+              <icon-file />
+              <span>对账单管理</span>
+            </div>
+          </template>
+        </a-tab-pane>
+        <a-tab-pane key="workday" title="工作日设置">
+          <template #title>
+            <div class="tab-title">
+              <icon-calendar />
+              <span>工作日设置</span>
+            </div>
+          </template>
+        </a-tab-pane>
+      </a-tabs>
+
+      <div class="tab-content">
+        <router-view />
       </div>
     </a-card>
   </div>
 </template>
 
 <script setup>
-import { IconApps } from '@arco-design/web-vue/es/icon'
+import { ref, watch, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import {
+  IconApps,
+  IconFile,
+  IconCalendar
+} from '@arco-design/web-vue/es/icon'
+
+const route = useRoute()
+const router = useRouter()
+
+const activeTab = ref('settlement')
+
+function detectTabFromRoute() {
+  const path = route.path
+  if (path.includes('/workday')) {
+    activeTab.value = 'workday'
+  } else if (path.includes('/settlement/detail')) {
+    activeTab.value = 'settlement'
+  } else {
+    activeTab.value = 'settlement'
+  }
+}
+
+function handleTabChange(key) {
+  if (key === 'workday') {
+    router.push('/finance/workday')
+  } else {
+    router.push('/finance/settlement')
+  }
+}
+
+watch(() => route.path, () => {
+  detectTabFromRoute()
+})
+
+onMounted(() => {
+  detectTabFromRoute()
+})
 </script>
 
 <style scoped>
-.page-container {
+.finance-container {
   width: 100%;
 }
 
-.page-card {
+.finance-card {
   border-radius: 8px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .card-title {
@@ -44,27 +107,13 @@ import { IconApps } from '@arco-design/web-vue/es/icon'
   font-size: 20px;
 }
 
-.placeholder-content {
-  padding: 80px 0;
-  text-align: center;
-  color: #86909c;
+.tab-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.placeholder-icon {
-  font-size: 64px;
-  color: #c9cdd4;
-  margin-bottom: 20px;
-}
-
-.placeholder-content h3 {
-  color: #4e5969;
-  margin: 0 0 12px 0;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.placeholder-content p {
-  margin: 0;
-  font-size: 14px;
+.tab-content {
+  padding-top: 4px;
 }
 </style>
