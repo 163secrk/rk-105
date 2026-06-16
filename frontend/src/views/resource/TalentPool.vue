@@ -205,8 +205,19 @@ const defaultForm = () => ({
 
 const formData = reactive(defaultForm())
 
+const phoneRegex = /^1[3-9]\d{9}$/
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
 const formRules = {
   name: [{ required: true, message: '请输入姓名' }],
+  phone: [
+    { required: true, message: '请输入手机号码' },
+    { match: phoneRegex, message: '请输入正确的手机号码（11位，以1开头）' }
+  ],
+  email: [
+    { required: true, message: '请输入邮箱' },
+    { match: emailRegex, message: '请输入正确的邮箱地址' }
+  ],
   level: [{ required: true, message: '请选择职级' }],
   status: [{ required: true, message: '请选择状态' }]
 }

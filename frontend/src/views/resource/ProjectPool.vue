@@ -184,8 +184,34 @@ const defaultForm = () => ({
 
 const formData = reactive(defaultForm())
 
+const phoneRegex = /^1[3-9]\d{9}$/
+
+function validatePriceOrder(value, callback) {
+  const { priceJunior, priceMiddle, priceSenior } = formData
+  if (priceJunior != null && priceMiddle != null && priceMiddle <= priceJunior) {
+    callback('中级单价应高于初级单价')
+    return
+  }
+  if (priceMiddle != null && priceSenior != null && priceSenior <= priceMiddle) {
+    callback('高级单价应高于中级单价')
+    return
+  }
+  if (priceJunior != null && priceSenior != null && priceSenior <= priceJunior) {
+    callback('高级单价应高于初级单价')
+    return
+  }
+  callback()
+}
+
 const formRules = {
-  projectName: [{ required: true, message: '请输入项目名称' }]
+  projectName: [{ required: true, message: '请输入项目名称' }],
+  contactPhone: [
+    { required: true, message: '请输入联系电话' },
+    { match: phoneRegex, message: '请输入正确的手机号码（11位，以1开头）' }
+  ],
+  priceJunior: [{ validator: validatePriceOrder }],
+  priceMiddle: [{ validator: validatePriceOrder }],
+  priceSenior: [{ validator: validatePriceOrder }]
 }
 
 async function fetchList() {

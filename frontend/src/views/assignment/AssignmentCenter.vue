@@ -171,6 +171,7 @@
                     style="width: 100%;"
                     placeholder="请选择开始日期"
                     format="YYYY-MM-DD"
+                    :disabled-date="disablePastDate"
                     :allow-clear
                     @change="handleDateChange"
                   />
@@ -183,6 +184,7 @@
                     style="width: 100%;"
                     placeholder="请选择结束日期"
                     format="YYYY-MM-DD"
+                    :disabled-date="disablePastDate"
                     :allow-clear
                     @change="handleDateChange"
                   />
@@ -389,6 +391,13 @@ function formatDate(dateStr) {
   return `${y}-${m}-${day}`
 }
 
+function disablePastDate(current) {
+  if (!current) return false
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  return current.getTime() < today.getTime()
+}
+
 async function fetchTalentList() {
   try {
     const res = await getTalentListApi()
@@ -521,6 +530,12 @@ async function nextStep() {
     }
     const start = new Date(wizardData.startDate)
     const end = new Date(wizardData.endDate)
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+    if (start.getTime() < today.getTime()) {
+      Message.error('开始日期不能早于今天')
+      return
+    }
     if (end < start) {
       Message.error('结束日期不能早于开始日期')
       return
