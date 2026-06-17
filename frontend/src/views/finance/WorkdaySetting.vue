@@ -107,7 +107,7 @@
     <a-modal
       v-model:visible="generateModalVisible"
       title="自动生成年度工作日"
-      :ok-text="确认生成"
+      ok-text="确认生成"
       @before-ok="handleGenerateOk"
       @cancel="generateModalVisible = false"
     >
@@ -122,7 +122,7 @@
             placeholder="请选择年份"
             style="width: 100%"
             value-format="YYYY"
-            :disabled-date="(current) => current && current.isBefore('2020-01-01')"
+            :disabled-date="disableBefore2020"
           />
         </a-form-item>
       </a-form>
@@ -195,6 +195,12 @@ function formatDateTime(dt) {
   if (isNaN(d.getTime())) return String(dt)
   const pad = n => String(n).padStart(2, '0')
   return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`
+}
+
+function disableBefore2020(current) {
+  if (!current) return false
+  const d = current instanceof Date ? current : new Date(current)
+  return d.getFullYear() < 2020
 }
 
 async function fetchList() {
