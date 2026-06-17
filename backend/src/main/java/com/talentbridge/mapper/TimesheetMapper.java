@@ -45,4 +45,7 @@ public interface TimesheetMapper {
 
     @Select("SELECT * FROM ts_timesheet WHERE month = #{month} AND status = 'APPROVED'")
     List<Timesheet> findApprovedByMonth(String month);
+
+    @Select("SELECT * FROM ts_timesheet WHERE talent_id = #{talentId} AND status = 'SUBMITTED'")
+    List<Timesheet> findSubmittedByTalentId(Long talentId);
 }

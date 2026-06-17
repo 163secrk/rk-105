@@ -17,4 +17,6 @@ public interface TalentService {
     int updateStatus(Long id, String status);
 
     int deleteById(Long id);
+
+    void resign(Long id);
 }

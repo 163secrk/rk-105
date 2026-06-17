@@ -8,6 +8,7 @@ com\talentbridge\service\impl\UserServiceImpl.class
 com\talentbridge\config\CorsConfig.class
 com\talentbridge\service\impl\WorkdaySettingServiceImpl.class
 com\talentbridge\mapper\TalentMapper.class
+com\talentbridge\dto\DashboardStats.class
 com\talentbridge\common\Result.class
 com\talentbridge\entity\Assignment.class
 com\talentbridge\controller\MenuController.class
@@ -20,12 +21,14 @@ com\talentbridge\service\AssignmentService.class
 com\talentbridge\mapper\TimesheetDayMapper.class
 com\talentbridge\service\TalentService.class
 com\talentbridge\dto\LoginRequest.class
+com\talentbridge\dto\ProjectProfit.class
 com\talentbridge\entity\SettlementItem.class
 com\talentbridge\entity\Project.class
 com\talentbridge\mapper\SettlementMapper.class
 com\talentbridge\mapper\WorkdaySettingMapper.class
 com\talentbridge\mapper\ProjectMapper.class
 com\talentbridge\entity\Talent.class
+com\talentbridge\controller\DashboardController.class
 com\talentbridge\mapper\UserMapper.class
 com\talentbridge\entity\TimesheetDay.class
 com\talentbridge\service\MenuService.class
@@ -45,6 +48,7 @@ com\talentbridge\service\WorkdaySettingService.class
 com\talentbridge\mapper\MenuMapper.class
 com\talentbridge\controller\SettlementController.class
 com\talentbridge\mapper\SettlementItemMapper.class
+com\talentbridge\dto\MonthlyProfit.class
 com\talentbridge\exception\GlobalExceptionHandler.class
 com\talentbridge\mapper\ProjectPmMapper.class
 com\talentbridge\service\SettlementService.class

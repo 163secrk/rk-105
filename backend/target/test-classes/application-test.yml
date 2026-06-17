@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:./data/test_talent_bridge.db
+    username:
+    password:
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      continue-on-error: true
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.talentbridge.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+jwt:
+  secret: talent-bridge-secret-key-2024-very-long-secret-for-jwt-token-generation
+  expiration: 86400000
