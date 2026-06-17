@@ -43,7 +43,7 @@ public class DashboardController {
         for (Talent talent : talents) {
             if ("IDLE".equals(talent.getStatus())) {
                 idleCount++;
-            } else if ("ASSIGNED".equals(talent.getStatus())) {
+            } else if ("ON_PROJECT".equals(talent.getStatus())) {
                 activeCount++;
             }
         }

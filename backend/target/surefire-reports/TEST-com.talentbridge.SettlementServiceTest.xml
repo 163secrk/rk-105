@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.talentbridge.SettlementServiceTest" time="4.596" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.talentbridge.SettlementServiceTest" time="8.819" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,10 +16,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CN"/>
     <property name="sun.boot.library.path" value="D:\soft\jdk-17.0.12\bin"/>
-    <property name="sun.java.command" value="C:\Users\47576\AppData\Local\Temp\surefire12868508212415404766\surefirebooter-20260617132918935_3.jar C:\Users\47576\AppData\Local\Temp\surefire12868508212415404766 2026-06-17T13-29-18_717-jvmRun1 surefire-20260617132918935_1tmp surefire_0-20260617132918935_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\47576\AppData\Local\Temp\surefire17421990664476583381\surefirebooter-20260617140817703_3.jar C:\Users\47576\AppData\Local\Temp\surefire17421990664476583381 2026-06-17T14-08-17_326-jvmRun1 surefire-20260617140817703_1tmp surefire_0-20260617140817703_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="D:\data\projects\bz-6\repos\rk-105\backend\target\test-classes;D:\data\projects\bz-6\repos\rk-105\backend\target\classes;C:\Users\47576\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.5\spring-boot-starter-web-3.2.5.jar;C:\Users\47576\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.5\spring-boot-starter-3.2.5.jar;C:\Users\47576\.m2\repository\org\springframework\boot\spring-boot\3.2.5\spring-boot-3.2.5.jar;C:\Users\47576\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.5\spring-boot-autoconfigure-3.2.5.jar;C:\Users\47576\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.5\spring-boot-starter-logging-3.2.5.jar;C:\Users\47576\.m2\repository\ch\qos\logback\logback-classic\1.4.14\logback-classic-1.4.14.jar;C:\Users\47576\.m2\repository\ch\qos\logback\logback-core\1.4.14\logback-core-1.4.14.jar;C:\Users\47576\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar;C:\Users\47576\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar;C:\Users\47576\.m2\repository\org\slf4j\jul-to-slf4j\2.0.13\jul-to-slf4j-2.0.13.jar;C:\Users\47576\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\47576\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\47576\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.2.5\spring-boot-starter-json-3.2.5.jar;C:\Users\47576\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.4\jackson-datatype-jdk8-2.15.4.jar;C:\Users\47576\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.4\jackson-datatype-jsr310-2.15.4.jar;C:\Users\47576\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.4\jackson-module-parameter-names-2.15.4.jar;C:\Users\47576\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.2.5\spring-boot-starter-tomcat-3.2.5.jar;C:\Users\47576\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.20\tomcat-embed-core-10.1.20.jar;C:\Users\47576\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.20\tomcat-embed-websocket-10.1.20.jar;C:\Users\47576\.m2\repository\org\springframework\spring-web\6.1.6\spring-web-6.1.6.jar;C:\Users\47576\.m2\repository\org\springframework\spring-beans\6.1.6\spring-beans-6.1.6.jar;C:\Users\47576\.m2\repository\io\micrometer\micrometer-observation\1.12.5\micrometer-observation-1.12.5.jar;C:\Users\47576\.m2\repository\io\micrometer\micrometer-commons\1.12.5\micrometer-commons-1.12.5.jar;C:\Users\47576\.m2\repository\org\springframework\spring-webmvc\6.1.6\spring-webmvc-6.1.6.jar;C:\Users\47576\.m2\repository\org\springframework\spring-context\6.1.6\spring-context-6.1.6.jar;C:\Users\47576\.m2\repository\org\springframework\spring-expression\6.1.6\spring-expression-6.1.6.jar;C:\Users\47576\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.2.5\spring-boot-starter-security-3.2.5.jar;C:\Users\47576\.m2\repository\org\springframework\spring-aop\6.1.6\spring-aop-6.1.6.jar;C:\Users\47576\.m2\repository\org\springframework\security\spring-security-config\6.2.4\spring-security-config-6.2.4.jar;C:\Users\47576\.m2\repository\org\springframework\security\spring-security-core\6.2.4\spring-security-core-6.2.4.jar;C:\Users\47576\.m2\repository\org\springframework\security\spring-security-crypto\6.2.4\spring-security-crypto-6.2.4.jar;C:\Users\47576\.m2\repository\org\springframework\security\spring-security-web\6.2.4\spring-security-web-6.2.4.jar;C:\Users\47576\.m2\repository\org\mybatis\spring\boot\mybatis-spring-boot-starter\3.0.3\mybatis-spring-boot-starter-3.0.3.jar;C:\Users\47576\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.2.5\spring-boot-starter-jdbc-3.2.5.jar;C:\Users\47576\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\47576\.m2\repository\org\springframework\spring-jdbc\6.1.6\spring-jdbc-6.1.6.jar;C:\Users\47576\.m2\repository\org\springframework\spring-tx\6.1.6\spring-tx-6.1.6.jar;C:\Users\47576\.m2\repository\org\mybatis\spring\boot\mybatis-spring-boot-autoconfigure\3.0.3\mybatis-spring-boot-autoconfigure-3.0.3.jar;C:\Users\47576\.m2\repository\org\mybatis\mybatis\3.5.14\mybatis-3.5.14.jar;C:\Users\47576\.m2\repository\org\mybatis\mybatis-spring\3.0.3\mybatis-spring-3.0.3.jar;C:\Users\47576\.m2\repository\org\xerial\sqlite-jdbc\3.43.2.0\sqlite-jdbc-3.43.2.0.jar;C:\Users\47576\.m2\repository\org\slf4j\slf4j-api\2.0.13\slf4j-api-2.0.13.jar;C:\Users\47576\.m2\repository\io\jsonwebtoken\jjwt-api\0.12.5\jjwt-api-0.12.5.jar;C:\Users\47576\.m2\repository\io\jsonwebtoken\jjwt-impl\0.12.5\jjwt-impl-0.12.5.jar;C:\Users\47576\.m2\repository\io\jsonwebtoken\jjwt-jackson\0.12.5\jjwt-jackson-0.12.5.jar;C:\Users\47576\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.4\jackson-databind-2.15.4.jar;C:\Users\47576\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.4\jackson-annotations-2.15.4.jar;C:\Users\47576\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.4\jackson-core-2.15.4.jar;C:\Users\47576\.m2\repository\org\projectlombok\lombok\1.18.32\lombok-1.18.32.jar;C:\Users\47576\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.2.5\spring-boot-starter-validation-3.2.5.jar;C:\Users\47576\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.20\tomcat-embed-el-10.1.20.jar;C:\Users\47576\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\47576\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\47576\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\47576\.m2\repository\com\fasterxml\classmate\1.6.0\classmate-1.6.0.jar;C:\Users\47576\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.2.5\spring-boot-starter-test-3.2.5.jar;C:\Users\47576\.m2\repository\org\springframework\boot\spring-boot-test\3.2.5\spring-boot-test-3.2.5.jar;C:\Users\47576\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.2.5\spring-boot-test-autoconfigure-3.2.5.jar;C:\Users\47576\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\47576\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\47576\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\47576\.m2\repository\net\minidev\json-smart\2.5.1\json-smart-2.5.1.jar;C:\Users\47576\.m2\repository\net\minidev\accessors-smart\2.5.1\accessors-smart-2.5.1.jar;C:\Users\47576\.m2\repository\org\ow2\asm\asm\9.6\asm-9.6.jar;C:\Users\47576\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\47576\.m2\repository\net\bytebuddy\byte-buddy\1.14.13\byte-buddy-1.14.13.jar;C:\Users\47576\.m2\repository\org\awaitility\awaitility\4.2.1\awaitility-4.2.1.jar;C:\Users\47576\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\47576\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\47576\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\47576\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\47576\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\47576\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\47576\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\47576\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\47576\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\47576\.m2\repository\org\mockito\mockito-core\5.7.0\mockito-core-5.7.0.jar;C:\Users\47576\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.13\byte-buddy-agent-1.14.13.jar;C:\Users\47576\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\47576\.m2\repository\org\mockito\mockito-junit-jupiter\5.7.0\mockito-junit-jupiter-5.7.0.jar;C:\Users\47576\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\47576\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\47576\.m2\repository\org\springframework\spring-core\6.1.6\spring-core-6.1.6.jar;C:\Users\47576\.m2\repository\org\springframework\spring-jcl\6.1.6\spring-jcl-6.1.6.jar;C:\Users\47576\.m2\repository\org\springframework\spring-test\6.1.6\spring-test-6.1.6.jar;C:\Users\47576\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;"/>
-    <property name="test" value="SettlementServiceTest,TalentServiceTest"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\47576"/>
     <property name="user.language" value="zh"/>
@@ -34,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="FILE_LOG_CHARSET" value="GBK"/>
     <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="C:\Users\47576\AppData\Local\Temp\surefire12868508212415404766\surefirebooter-20260617132918935_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\47576\AppData\Local\Temp\surefire17421990664476583381\surefirebooter-20260617140817703_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.12+8-LTS-286"/>
@@ -52,20 +51,20 @@
     <property name="user.dir" value="D:\data\projects\bz-6\repos\rk-105\backend"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="PID" value="40716"/>
+    <property name="PID" value="28416"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="CONSOLE_LOG_CHARSET" value="GBK"/>
     <property name="native.encoding" value="GBK"/>
-    <property name="java.library.path" value="D:\soft\jdk-17.0.12\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\usbipd-win\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\GitHub CLI\;C:\Users\47576\miniconda3;C:\Users\47576\miniconda3\Library\mingw-w64\bin;C:\Users\47576\miniconda3\Library\usr\bin;C:\Users\47576\miniconda3\Library\bin;C:\Users\47576\miniconda3\Scripts;C:\Users\47576\AppData\Local\Microsoft\WindowsApps;D:\soft\jdk-17.0.12\bin;D:\soft\node-v20.19.6-win-x64;D:\soft\Git\bin;C:\Users\47576\AppData\Local\Programs\CodeBuddy CN\bin;C:\Users\47576\AppData\Local\Programs\Antigravity\bin;D:\soft\apache-maven-3.9.15\bin;C:\Users\47576\AppData\Local\Programs\QoderCN\bin;C:\Users\47576\AppData\Local\Programs\Antigravity IDE\bin;D:\soft\go\bin;c:\Users\47576\.trae-cn\extensions\vscjava.vscode-java-debug-0.59.0-universal\bundled\scripts\noConfigScripts;."/>
+    <property name="java.library.path" value="D:\soft\jdk-17.0.12\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;c:\\Users\\47576\\.trae-cn\\tools\\trae-gopls\\current;c:\\Users\\47576\\.trae-cn\\sdks\\workspaces\\705bac2a\\versions\\node\\current;c:\\Users\\47576\\.trae-cn\\sdks\\versions\\node\\current;c:\Users\47576\.trae-cn\tools\trae-gopls\current;c:\Users\47576\.trae-cn\sdks\workspaces\705bac2a\versions\node\current;c:\Users\47576\.trae-cn\sdks\versions\node\current;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\usbipd-win\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\GitHub CLI\;C:\Users\47576\miniconda3;C:\Users\47576\miniconda3\Library\mingw-w64\bin;C:\Users\47576\miniconda3\Library\usr\bin;C:\Users\47576\miniconda3\Library\bin;C:\Users\47576\miniconda3\Scripts;C:\Users\47576\AppData\Local\Microsoft\WindowsApps;D:\soft\jdk-17.0.12\bin;D:\soft\node-v20.19.6-win-x64;D:\soft\Git\bin;C:\Users\47576\AppData\Local\Programs\CodeBuddy CN\bin;C:\Users\47576\AppData\Local\Programs\Antigravity\bin;D:\soft\apache-maven-3.9.15\bin;C:\Users\47576\AppData\Local\Programs\QoderCN\bin;C:\Users\47576\AppData\Local\Programs\Antigravity IDE\bin;D:\soft\go\bin;c:\Users\47576\.trae-cn\extensions\vscjava.vscode-java-debug-0.59.0-universal\bundled\scripts\noConfigScripts;c:\Users\47576\AppData\Local\Programs\Trae CN\resources\app\node_modules\@vscode\ripgrep\bin;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="java.vm.version" value="17.0.12+8-LTS-286"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testSettlement_June10Entry_15Attendance" classname="com.talentbridge.SettlementServiceTest" time="0.845">
-    <system-out><![CDATA[13:29:19.641 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.talentbridge.SettlementServiceTest]: SettlementServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-13:29:19.732 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.talentbridge.TalentBridgeApplication for test class com.talentbridge.SettlementServiceTest
+  <testcase name="testSettlement_June10Entry_15Attendance" classname="com.talentbridge.SettlementServiceTest" time="1.645">
+    <system-out><![CDATA[14:08:18.639 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.talentbridge.SettlementServiceTest]: SettlementServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:08:18.744 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.talentbridge.TalentBridgeApplication for test class com.talentbridge.SettlementServiceTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -75,20 +74,20 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2026-06-17T13:29:20.133+08:00  INFO 40716 --- [           main] com.talentbridge.SettlementServiceTest   : Starting SettlementServiceTest using Java 17.0.12 with PID 40716 (started by 47576 in D:\data\projects\bz-6\repos\rk-105\backend)
-2026-06-17T13:29:20.135+08:00  INFO 40716 --- [           main] com.talentbridge.SettlementServiceTest   : The following 1 profile is active: "test"
+2026-06-17T14:08:19.269+08:00  INFO 28416 --- [           main] com.talentbridge.SettlementServiceTest   : Starting SettlementServiceTest using Java 17.0.12 with PID 28416 (started by 47576 in D:\data\projects\bz-6\repos\rk-105\backend)
+2026-06-17T14:08:19.271+08:00  INFO 28416 --- [           main] com.talentbridge.SettlementServiceTest   : The following 1 profile is active: "test"
 Logging initialized using 'class org.apache.ibatis.logging.stdout.StdOutImpl' adapter.
-2026-06-17T13:29:21.405+08:00  INFO 40716 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-17T13:29:21.639+08:00  INFO 40716 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@29896529
-2026-06-17T13:29:21.640+08:00  INFO 40716 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-17T13:29:21.954+08:00  WARN 40716 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+2026-06-17T14:08:21.371+08:00  INFO 28416 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-17T14:08:22.002+08:00  INFO 28416 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@29896529
+2026-06-17T14:08:22.010+08:00  INFO 28416 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-17T14:08:22.714+08:00  WARN 28416 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 909d55cd-e305-4057-b5da-6a10945db316
+Using generated security password: 0ed574c9-968b-48fb-af0d-4261ef6ac5bf
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2026-06-17T13:29:22.569+08:00  INFO 40716 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@27f71195, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@340afaf8, org.springframework.security.web.context.SecurityContextHolderFilter@477523ba, org.springframework.security.web.header.HeaderWriterFilter@2d206a71, org.springframework.web.filter.CorsFilter@6238d5e0, org.springframework.security.web.authentication.logout.LogoutFilter@76a362a4, com.talentbridge.config.JwtAuthenticationFilter@336f49a1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@78c74647, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39652a30, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c8b8de0, org.springframework.security.web.session.SessionManagementFilter@7bd38fed, org.springframework.security.web.access.ExceptionTranslationFilter@37775bb1, org.springframework.security.web.access.intercept.AuthorizationFilter@23e61112]
-2026-06-17T13:29:23.039+08:00  INFO 40716 --- [           main] com.talentbridge.SettlementServiceTest   : Started SettlementServiceTest in 3.188 seconds (process running for 3.974)
+2026-06-17T14:08:24.016+08:00  INFO 28416 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@27f71195, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@340afaf8, org.springframework.security.web.context.SecurityContextHolderFilter@477523ba, org.springframework.security.web.header.HeaderWriterFilter@2d206a71, org.springframework.web.filter.CorsFilter@6238d5e0, org.springframework.security.web.authentication.logout.LogoutFilter@76a362a4, com.talentbridge.config.JwtAuthenticationFilter@336f49a1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@78c74647, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39652a30, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c8b8de0, org.springframework.security.web.session.SessionManagementFilter@7bd38fed, org.springframework.security.web.access.ExceptionTranslationFilter@37775bb1, org.springframework.security.web.access.intercept.AuthorizationFilter@23e61112]
+2026-06-17T14:08:25.157+08:00  INFO 28416 --- [           main] com.talentbridge.SettlementServiceTest   : Started SettlementServiceTest in 6.245 seconds (process running for 7.212)
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25a290ee] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@979248421 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
@@ -122,7 +121,7 @@ JDBC Connection [HikariProxyConnection@289336712 wrapping org.sqlite.jdbc4.JDBC4
 ==>  Preparing: SELECT COUNT(*) FROM sys_role_menu
 ==> Parameters: 
 <==    Columns: COUNT(*)
-<==        Row: 28
+<==        Row: 44
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e77678c]
 Creating a new SqlSession
@@ -141,7 +140,7 @@ JDBC Connection [HikariProxyConnection@929782962 wrapping org.sqlite.jdbc4.JDBC4
 ==> Parameters: 1(Long), 4(Long)
 <==    Updates: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4228f269]
-2026-06-17T13:29:23.192+08:00  INFO 40716 --- [           main] c.talentbridge.config.DataInitializer    : 项目PM关联数据初始化完成
+2026-06-17T14:08:25.430+08:00  INFO 28416 --- [           main] c.talentbridge.config.DataInitializer    : 项目PM关联数据初始化完成
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@11abd6c] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@43734323 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
@@ -184,7 +183,7 @@ JDBC Connection [HikariProxyConnection@1598068850 wrapping org.sqlite.jdbc4.JDBC
 ==>  Preparing: SELECT COUNT(*) FROM sys_role_menu
 ==> Parameters: 
 <==    Columns: COUNT(*)
-<==        Row: 28
+<==        Row: 44
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4300e240]
 Creating a new SqlSession
@@ -264,8 +263,8 @@ JDBC Connection [HikariProxyConnection@540501426 wrapping org.sqlite.jdbc4.JDBC4
 ==> Parameters: 3(Long), 11(Long)
 <==    Updates: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40016ce1]
-2026-06-17T13:29:23.253+08:00  INFO 40716 --- [           main] c.talentbridge.config.DataInitializer    : 财务子菜单数据初始化完成
-2026-06-17T13:29:23.255+08:00  INFO 40716 --- [           main] c.talentbridge.config.DataInitializer    : 数据初始化完成
+2026-06-17T14:08:25.574+08:00  INFO 28416 --- [           main] c.talentbridge.config.DataInitializer    : 财务子菜单数据初始化完成
+2026-06-17T14:08:25.574+08:00  INFO 28416 --- [           main] c.talentbridge.config.DataInitializer    : 数据初始化完成
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@249a45fd] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@646909939 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
@@ -275,7 +274,7 @@ JDBC Connection [HikariProxyConnection@646909939 wrapping org.sqlite.jdbc4.JDBC4
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 2
+<==        Row: 4
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@249a45fd]
 Creating a new SqlSession
@@ -287,7 +286,7 @@ JDBC Connection [HikariProxyConnection@1566238378 wrapping org.sqlite.jdbc4.JDBC
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 6
+<==        Row: 16
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f1ad846]
 Creating a new SqlSession
@@ -299,7 +298,7 @@ JDBC Connection [HikariProxyConnection@199344266 wrapping org.sqlite.jdbc4.JDBC4
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 4
+<==        Row: 10
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2210e466]
 Creating a new SqlSession
@@ -311,211 +310,211 @@ JDBC Connection [HikariProxyConnection@1246783221 wrapping org.sqlite.jdbc4.JDBC
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 11
+<==        Row: 21
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7296fe0b]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54b2d002] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@488399791 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO res_assignment (talent_id, talent_name, project_id, project_name, start_date, end_date, unit_price, talent_level, status, remark) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-==> Parameters: 6(Long), 张三(String), 4(Long), 华为云平台项目(String), 2026-06-10(LocalDate), 2026-06-30(LocalDate), 21000.00(BigDecimal), MIDDLE(String), ACTIVE(String), null
+==> Parameters: 16(Long), 张三(String), 10(Long), 华为云平台项目(String), 2026-06-10(LocalDate), 2026-06-30(LocalDate), 21000.00(BigDecimal), MIDDLE(String), ACTIVE(String), null
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 4
+<==        Row: 10
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54b2d002]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2095c331] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@956934228 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO ts_timesheet (user_id, user_name, talent_id, talent_name, project_id, project_name, month, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-==> Parameters: 11(Long), 张三(String), 6(Long), 张三(String), 4(Long), 华为云平台项目(String), 2026-06(String), APPROVED(String)
+==> Parameters: 21(Long), 张三(String), 16(Long), 张三(String), 10(Long), 华为云平台项目(String), 2026-06(String), APPROVED(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 4
+<==        Row: 10
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2095c331]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b795db7] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@2143018378 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO ts_timesheet_day (timesheet_id, day_date, status) VALUES (?, ?, ?)
-==> Parameters: 4(Long), 2026-06-10(LocalDate), NORMAL(String)
+==> Parameters: 10(Long), 2026-06-10(LocalDate), NORMAL(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 46
+<==        Row: 136
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b795db7]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56ba8e8c] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@2001493596 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO ts_timesheet_day (timesheet_id, day_date, status) VALUES (?, ?, ?)
-==> Parameters: 4(Long), 2026-06-11(LocalDate), NORMAL(String)
+==> Parameters: 10(Long), 2026-06-11(LocalDate), NORMAL(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 47
+<==        Row: 137
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56ba8e8c]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55f6f965] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@1088287545 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO ts_timesheet_day (timesheet_id, day_date, status) VALUES (?, ?, ?)
-==> Parameters: 4(Long), 2026-06-12(LocalDate), NORMAL(String)
+==> Parameters: 10(Long), 2026-06-12(LocalDate), NORMAL(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 48
+<==        Row: 138
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55f6f965]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c83ed77] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@220666452 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO ts_timesheet_day (timesheet_id, day_date, status) VALUES (?, ?, ?)
-==> Parameters: 4(Long), 2026-06-13(LocalDate), NORMAL(String)
+==> Parameters: 10(Long), 2026-06-13(LocalDate), NORMAL(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 49
+<==        Row: 139
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c83ed77]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6ff8e744] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@1083413945 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO ts_timesheet_day (timesheet_id, day_date, status) VALUES (?, ?, ?)
-==> Parameters: 4(Long), 2026-06-15(LocalDate), NORMAL(String)
+==> Parameters: 10(Long), 2026-06-15(LocalDate), NORMAL(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 50
+<==        Row: 140
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6ff8e744]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53e82089] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@1722316058 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO ts_timesheet_day (timesheet_id, day_date, status) VALUES (?, ?, ?)
-==> Parameters: 4(Long), 2026-06-16(LocalDate), NORMAL(String)
+==> Parameters: 10(Long), 2026-06-16(LocalDate), NORMAL(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 51
+<==        Row: 141
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53e82089]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4ec27c4c] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@304088688 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO ts_timesheet_day (timesheet_id, day_date, status) VALUES (?, ?, ?)
-==> Parameters: 4(Long), 2026-06-17(LocalDate), NORMAL(String)
+==> Parameters: 10(Long), 2026-06-17(LocalDate), NORMAL(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 52
+<==        Row: 142
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4ec27c4c]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e80d5] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@628831585 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO ts_timesheet_day (timesheet_id, day_date, status) VALUES (?, ?, ?)
-==> Parameters: 4(Long), 2026-06-18(LocalDate), NORMAL(String)
+==> Parameters: 10(Long), 2026-06-18(LocalDate), NORMAL(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 53
+<==        Row: 143
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e80d5]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78861d9e] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@1787266936 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO ts_timesheet_day (timesheet_id, day_date, status) VALUES (?, ?, ?)
-==> Parameters: 4(Long), 2026-06-19(LocalDate), NORMAL(String)
+==> Parameters: 10(Long), 2026-06-19(LocalDate), NORMAL(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 54
+<==        Row: 144
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78861d9e]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1eabfad5] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@1644631132 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO ts_timesheet_day (timesheet_id, day_date, status) VALUES (?, ?, ?)
-==> Parameters: 4(Long), 2026-06-22(LocalDate), NORMAL(String)
+==> Parameters: 10(Long), 2026-06-22(LocalDate), NORMAL(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 55
+<==        Row: 145
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1eabfad5]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2a259f6f] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@2093965588 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO ts_timesheet_day (timesheet_id, day_date, status) VALUES (?, ?, ?)
-==> Parameters: 4(Long), 2026-06-23(LocalDate), NORMAL(String)
+==> Parameters: 10(Long), 2026-06-23(LocalDate), NORMAL(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 56
+<==        Row: 146
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2a259f6f]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3df3410a] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@1728845596 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO ts_timesheet_day (timesheet_id, day_date, status) VALUES (?, ?, ?)
-==> Parameters: 4(Long), 2026-06-24(LocalDate), NORMAL(String)
+==> Parameters: 10(Long), 2026-06-24(LocalDate), NORMAL(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 57
+<==        Row: 147
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3df3410a]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61d42275] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@1712597146 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO ts_timesheet_day (timesheet_id, day_date, status) VALUES (?, ?, ?)
-==> Parameters: 4(Long), 2026-06-25(LocalDate), NORMAL(String)
+==> Parameters: 10(Long), 2026-06-25(LocalDate), NORMAL(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 58
+<==        Row: 148
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61d42275]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4148ce43] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@1190892929 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO ts_timesheet_day (timesheet_id, day_date, status) VALUES (?, ?, ?)
-==> Parameters: 4(Long), 2026-06-26(LocalDate), NORMAL(String)
+==> Parameters: 10(Long), 2026-06-26(LocalDate), NORMAL(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 59
+<==        Row: 149
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4148ce43]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@46d69ca4] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@1553686114 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: INSERT INTO ts_timesheet_day (timesheet_id, day_date, status) VALUES (?, ?, ?)
-==> Parameters: 4(Long), 2026-06-27(LocalDate), NORMAL(String)
+==> Parameters: 10(Long), 2026-06-27(LocalDate), NORMAL(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 60
+<==        Row: 150
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@46d69ca4]
 Creating a new SqlSession
@@ -529,74 +528,74 @@ Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7
 ==>  Preparing: SELECT * FROM fin_workday_setting WHERE month = ?
 ==> Parameters: 2026-06(String)
 <==    Columns: id, month, workday_count, remark, create_time, update_time
-<==        Row: 2, 2026-06, 21, 6月法定工作日, 2026-06-17 05:29:23, 2026-06-17 05:29:23
+<==        Row: 4, 2026-06, 21, 6月法定工作日, 2026-06-17 06:08:27, 2026-06-17 06:08:27
 <==      Total: 1
 Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7c]
 Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7c] from current transaction
 ==>  Preparing: SELECT * FROM ts_timesheet WHERE month = ? AND status = 'APPROVED'
 ==> Parameters: 2026-06(String)
 <==    Columns: id, user_id, user_name, talent_id, talent_name, project_id, project_name, month, status, approver_id, approver_name, approve_time, reject_reason, create_time, update_time
-<==        Row: 4, 11, 张三, 6, 张三, 4, 华为云平台项目, 2026-06, APPROVED, null, null, null, null, 2026-06-17 05:29:23, 2026-06-17 05:29:23
+<==        Row: 10, 21, 张三, 16, 张三, 10, 华为云平台项目, 2026-06, APPROVED, null, null, null, null, 2026-06-17 06:08:27, 2026-06-17 06:08:27
 <==      Total: 1
 Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7c]
 Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7c] from current transaction
 ==>  Preparing: INSERT INTO fin_settlement (settlement_no, month, workday_count, total_amount, item_count, status, creator_id, creator_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-==> Parameters: STL202606132924(String), 2026-06(String), 21(Integer), 0(BigDecimal), 0(Integer), GENERATED(String), 999(Long), 财务(String)
+==> Parameters: STL202606140827(String), 2026-06(String), 21(Integer), 0(BigDecimal), 0(Integer), GENERATED(String), 999(Long), 财务(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 2
+<==        Row: 4
 <==      Total: 1
 Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7c]
 Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7c] from current transaction
 ==>  Preparing: SELECT * FROM ts_timesheet_day WHERE timesheet_id = ? ORDER BY day_date
-==> Parameters: 4(Long)
+==> Parameters: 10(Long)
 <==    Columns: id, timesheet_id, day_date, status
-<==        Row: 46, 4, 2026-06-10, NORMAL
-<==        Row: 47, 4, 2026-06-11, NORMAL
-<==        Row: 48, 4, 2026-06-12, NORMAL
-<==        Row: 49, 4, 2026-06-13, NORMAL
-<==        Row: 50, 4, 2026-06-15, NORMAL
-<==        Row: 51, 4, 2026-06-16, NORMAL
-<==        Row: 52, 4, 2026-06-17, NORMAL
-<==        Row: 53, 4, 2026-06-18, NORMAL
-<==        Row: 54, 4, 2026-06-19, NORMAL
-<==        Row: 55, 4, 2026-06-22, NORMAL
-<==        Row: 56, 4, 2026-06-23, NORMAL
-<==        Row: 57, 4, 2026-06-24, NORMAL
-<==        Row: 58, 4, 2026-06-25, NORMAL
-<==        Row: 59, 4, 2026-06-26, NORMAL
-<==        Row: 60, 4, 2026-06-27, NORMAL
+<==        Row: 136, 10, 2026-06-10, NORMAL
+<==        Row: 137, 10, 2026-06-11, NORMAL
+<==        Row: 138, 10, 2026-06-12, NORMAL
+<==        Row: 139, 10, 2026-06-13, NORMAL
+<==        Row: 140, 10, 2026-06-15, NORMAL
+<==        Row: 141, 10, 2026-06-16, NORMAL
+<==        Row: 142, 10, 2026-06-17, NORMAL
+<==        Row: 143, 10, 2026-06-18, NORMAL
+<==        Row: 144, 10, 2026-06-19, NORMAL
+<==        Row: 145, 10, 2026-06-22, NORMAL
+<==        Row: 146, 10, 2026-06-23, NORMAL
+<==        Row: 147, 10, 2026-06-24, NORMAL
+<==        Row: 148, 10, 2026-06-25, NORMAL
+<==        Row: 149, 10, 2026-06-26, NORMAL
+<==        Row: 150, 10, 2026-06-27, NORMAL
 <==      Total: 15
 Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7c]
 Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7c] from current transaction
 ==>  Preparing: SELECT * FROM res_assignment WHERE talent_id = ? AND status = 'ACTIVE'
-==> Parameters: 6(Long)
+==> Parameters: 16(Long)
 <==    Columns: id, talent_id, talent_name, project_id, project_name, start_date, end_date, unit_price, talent_level, status, remark, create_time, update_time
-<==        Row: 4, 6, 张三, 4, 华为云平台项目, 2026-06-10, 2026-06-30, 21000, MIDDLE, ACTIVE, null, 2026-06-17 05:29:23, 2026-06-17 05:29:23
+<==        Row: 10, 16, 张三, 10, 华为云平台项目, 2026-06-10, 2026-06-30, 21000, MIDDLE, ACTIVE, null, 2026-06-17 06:08:27, 2026-06-17 06:08:27
 <==      Total: 1
 Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7c]
 Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7c] from current transaction
 ==>  Preparing: INSERT INTO fin_settlement_item (settlement_id, timesheet_id, user_id, user_name, talent_id, talent_name, project_id, project_name, unit_price_snapshot, workday_count_snapshot, actual_attendance_days, overtime_days, overtime_amount, base_amount, final_amount, calc_detail) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-==> Parameters: 2(Long), 4(Long), 11(Long), 张三(String), 6(Long), 张三(String), 4(Long), 华为云平台项目(String), 21000(BigDecimal), 21(Integer), 15(Integer), 0(Integer), 0.00(BigDecimal), 15000.00(BigDecimal), 15000.00(BigDecimal), 基础金额 = 21000.00 ÷ 21 × 15 = 15000.00；加班金额 = 1000.00 × 0 = 0.00；合计 = 15000.00(String)
+==> Parameters: 4(Long), 10(Long), 21(Long), 张三(String), 16(Long), 张三(String), 10(Long), 华为云平台项目(String), 21000(BigDecimal), 21(Integer), 15(Integer), 0(Integer), 0.00(BigDecimal), 15000.00(BigDecimal), 15000.00(BigDecimal), 基础金额 = 21000.00 ÷ 21 × 15 = 15000.00；加班金额 = 1000.00 × 0 = 0.00；合计 = 15000.00(String)
 <==    Updates: 1
 ==>  Preparing: SELECT last_insert_rowid()
 ==> Parameters: 
 <==    Columns: last_insert_rowid()
-<==        Row: 2
+<==        Row: 4
 <==      Total: 1
 Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7c]
 Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7c] from current transaction
 ==>  Preparing: UPDATE fin_settlement SET total_amount = ?, item_count = ?, update_time = CURRENT_TIMESTAMP WHERE id = ?
-==> Parameters: 15000.00(BigDecimal), 1(Integer), 2(Long)
+==> Parameters: 15000.00(BigDecimal), 1(Integer), 4(Long)
 <==    Updates: 1
 Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7c]
 Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7c] from current transaction
 ==>  Preparing: SELECT * FROM fin_settlement WHERE id = ?
-==> Parameters: 2(Long)
+==> Parameters: 4(Long)
 <==    Columns: id, settlement_no, month, workday_count, total_amount, item_count, status, creator_id, creator_name, create_time, update_time
-<==        Row: 2, STL202606132924, 2026-06, 21, 15000, 1, GENERATED, 999, 财务, 2026-06-17 05:29:24, 2026-06-17 05:29:24
+<==        Row: 4, STL202606140827, 2026-06, 21, 15000, 1, GENERATED, 999, 财务, 2026-06-17 06:08:27, 2026-06-17 06:08:27
 <==      Total: 1
 Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7c]
 Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e2db7c]
@@ -606,18 +605,18 @@ Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a8b42a3] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@290991542 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: SELECT * FROM fin_settlement WHERE id = ?
-==> Parameters: 2(Long)
+==> Parameters: 4(Long)
 <==    Columns: id, settlement_no, month, workday_count, total_amount, item_count, status, creator_id, creator_name, create_time, update_time
-<==        Row: 2, STL202606132924, 2026-06, 21, 15000, 1, GENERATED, 999, 财务, 2026-06-17 05:29:24, 2026-06-17 05:29:24
+<==        Row: 4, STL202606140827, 2026-06, 21, 15000, 1, GENERATED, 999, 财务, 2026-06-17 06:08:27, 2026-06-17 06:08:27
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a8b42a3]
 Creating a new SqlSession
 SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44106e25] was not registered for synchronization because synchronization is not active
 JDBC Connection [HikariProxyConnection@91904771 wrapping org.sqlite.jdbc4.JDBC4Connection@29896529] will not be managed by Spring
 ==>  Preparing: SELECT * FROM fin_settlement_item WHERE settlement_id = ? ORDER BY id
-==> Parameters: 2(Long)
+==> Parameters: 4(Long)
 <==    Columns: id, settlement_id, timesheet_id, user_id, user_name, talent_id, talent_name, project_id, project_name, unit_price_snapshot, workday_count_snapshot, actual_attendance_days, overtime_days, overtime_amount, base_amount, final_amount, calc_detail, create_time
-<==        Row: 2, 2, 4, 11, 张三, 6, 张三, 4, 华为云平台项目, 21000, 21, 15, 0, 0, 15000, 15000, 基础金额 = 21000.00 ÷ 21 × 15 = 15000.00；加班金额 = 1000.00 × 0 = 0.00；合计 = 15000.00, 2026-06-17 05:29:24
+<==        Row: 4, 4, 10, 21, 张三, 16, 张三, 10, 华为云平台项目, 21000, 21, 15, 0, 0, 15000, 15000, 基础金额 = 21000.00 ÷ 21 × 15 = 15000.00；加班金额 = 1000.00 × 0 = 0.00；合计 = 15000.00, 2026-06-17 06:08:27
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44106e25]
 ==== 结算计算过程分析 ====

@@ -104,6 +104,16 @@ const dateRange = ref([])
 const filterForm = reactive({
   projectId: undefined
 })
+
+const formatDateParam = (d) => {
+  if (!d) return ''
+  if (typeof d === 'string') return d.substring(0, 7)
+  if (d.format) return d.format('YYYY-MM')
+  const date = new Date(d)
+  const y = date.getFullYear()
+  const m = String(date.getMonth() + 1).padStart(2, '0')
+  return `${y}-${m}`
+}
 const projectList = ref([])
 const chartData = ref([])
 const loading = ref(false)
@@ -308,8 +318,8 @@ const loadData = async () => {
   try {
     const params = {}
     if (dateRange.value && dateRange.value.length === 2) {
-      params.startMonth = dateRange.value[0]
-      params.endMonth = dateRange.value[1]
+      params.startMonth = formatDateParam(dateRange.value[0])
+      params.endMonth = formatDateParam(dateRange.value[1])
     }
     if (filterForm.projectId) {
       params.projectId = filterForm.projectId

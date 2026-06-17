@@ -98,6 +98,9 @@ public class AssignmentController {
             assignment.setProjectName(project.getProjectName());
         }
         Assignment created = assignmentService.insert(assignment);
+        if (talent != null && !"LEFT".equals(talent.getStatus()) && !"ON_PROJECT".equals(talent.getStatus())) {
+            talentService.updateStatus(talent.getId(), "ON_PROJECT");
+        }
         return Result.success(created);
     }
 
@@ -117,13 +120,40 @@ public class AssignmentController {
                 return Result.error(409, "时间段冲突：该人才在指定时间段内已有其他指派记录");
             }
         }
+        Assignment oldAssignment = assignmentService.findById(assignment.getId());
         assignmentService.update(assignment);
+        Long talentId = assignment.getTalentId() != null ? assignment.getTalentId() : (oldAssignment != null ? oldAssignment.getTalentId() : null);
+        if (talentId != null) {
+            List<Assignment> remainingActive = assignmentService.findActiveByTalentId(talentId);
+            Talent talent = talentService.findById(talentId);
+            if (talent != null && !"LEFT".equals(talent.getStatus())) {
+                if (remainingActive != null && !remainingActive.isEmpty()) {
+                    if (!"ON_PROJECT".equals(talent.getStatus())) {
+                        talentService.updateStatus(talentId, "ON_PROJECT");
+                    }
+                } else {
+                    if (!"IDLE".equals(talent.getStatus())) {
+                        talentService.updateStatus(talentId, "IDLE");
+                    }
+                }
+            }
+        }
         return Result.success();
     }
 
     @DeleteMapping("/{id}")
     public Result<Void> delete(@PathVariable Long id) {
+        Assignment assignment = assignmentService.findById(id);
         assignmentService.deleteById(id);
+        if (assignment != null && assignment.getTalentId() != null) {
+            List<Assignment> remainingActive = assignmentService.findActiveByTalentId(assignment.getTalentId());
+            if (remainingActive == null || remainingActive.isEmpty()) {
+                Talent talent = talentService.findById(assignment.getTalentId());
+                if (talent != null && !"LEFT".equals(talent.getStatus())) {
+                    talentService.updateStatus(talent.getId(), "IDLE");
+                }
+            }
+        }
         return Result.success();
     }
 }

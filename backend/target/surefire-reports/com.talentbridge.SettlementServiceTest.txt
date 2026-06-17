@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.talentbridge.SettlementServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.596 s -- in com.talentbridge.SettlementServiceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.819 s -- in com.talentbridge.SettlementServiceTest
