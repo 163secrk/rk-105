@@ -3,6 +3,7 @@ package com.talentbridge.controller;
 import com.talentbridge.common.Result;
 import com.talentbridge.entity.Talent;
 import com.talentbridge.service.TalentService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,13 +27,13 @@ public class TalentController {
     }
 
     @PostMapping
-    public Result<Void> add(@RequestBody Talent talent) {
+    public Result<Void> add(@Valid @RequestBody Talent talent) {
         talentService.insert(talent);
         return Result.success();
     }
 
     @PutMapping
-    public Result<Void> update(@RequestBody Talent talent) {
+    public Result<Void> update(@Valid @RequestBody Talent talent) {
         talentService.update(talent);
         return Result.success();
     }

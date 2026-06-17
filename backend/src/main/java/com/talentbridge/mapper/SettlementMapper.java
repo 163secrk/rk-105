@@ -23,7 +23,7 @@ public interface SettlementMapper {
     @Insert("INSERT INTO fin_settlement (settlement_no, month, workday_count, total_amount, " +
             "item_count, status, creator_id, creator_name) VALUES (#{settlementNo}, #{month}, " +
             "#{workdayCount}, #{totalAmount}, #{itemCount}, #{status}, #{creatorId}, #{creatorName})")
-    @Options(useGeneratedKeys = true, keyProperty = "id")
+    @SelectKey(statement = "SELECT last_insert_rowid()", keyProperty = "id", before = false, resultType = Long.class)
     int insert(Settlement settlement);
 
     @Update("UPDATE fin_settlement SET total_amount = #{totalAmount}, item_count = #{itemCount}, " +

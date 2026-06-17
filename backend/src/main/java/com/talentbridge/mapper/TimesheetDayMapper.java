@@ -13,7 +13,7 @@ public interface TimesheetDayMapper {
 
     @Insert("INSERT INTO ts_timesheet_day (timesheet_id, day_date, status) " +
             "VALUES (#{timesheetId}, #{dayDate}, #{status})")
-    @Options(useGeneratedKeys = true, keyProperty = "id")
+    @SelectKey(statement = "SELECT last_insert_rowid()", keyProperty = "id", before = false, resultType = Long.class)
     int insert(TimesheetDay day);
 
     @Delete("DELETE FROM ts_timesheet_day WHERE timesheet_id = #{timesheetId}")

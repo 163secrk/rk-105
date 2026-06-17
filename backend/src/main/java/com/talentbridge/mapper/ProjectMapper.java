@@ -18,7 +18,7 @@ public interface ProjectMapper {
             "price_junior, price_middle, price_senior, remark) " +
             "VALUES (#{projectName}, #{clientName}, #{contactPerson}, #{contactPhone}, " +
             "#{priceJunior}, #{priceMiddle}, #{priceSenior}, #{remark})")
-    @Options(useGeneratedKeys = true, keyProperty = "id")
+    @SelectKey(statement = "SELECT last_insert_rowid()", keyProperty = "id", before = false, resultType = Long.class)
     int insert(Project project);
 
     @Update("UPDATE res_project SET project_name = #{projectName}, client_name = #{clientName}, " +

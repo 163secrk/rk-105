@@ -7,6 +7,7 @@ import com.talentbridge.entity.WorkdaySetting;
 import com.talentbridge.service.UserService;
 import com.talentbridge.service.WorkdaySettingService;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -50,17 +51,11 @@ public class WorkdaySettingController {
     }
 
     @PostMapping("/save")
-    public Result<WorkdaySetting> save(@RequestBody WorkdaySetting setting, HttpServletRequest request) {
+    public Result<WorkdaySetting> save(@Valid @RequestBody WorkdaySetting setting, HttpServletRequest request) {
         Long userId = getUserIdFromRequest(request);
         User user = userService.getUserWithRoles(userId);
         if (!isFinance(user)) {
             return Result.error(403, "无权限操作，仅财务人员可设置工作日");
-        }
-        if (setting.getMonth() == null || setting.getMonth().isEmpty()) {
-            return Result.error("月份不能为空");
-        }
-        if (setting.getWorkdayCount() == null || setting.getWorkdayCount() <= 0 || setting.getWorkdayCount() > 31) {
-            return Result.error("工作日天数必须在1-31之间");
         }
         return Result.success(workdaySettingService.saveOrUpdate(setting));
     }

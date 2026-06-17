@@ -16,7 +16,7 @@ public interface TalentMapper {
 
     @Insert("INSERT INTO res_talent (name, gender, phone, email, level, monthly_salary, tech_stack, status, remark) " +
             "VALUES (#{name}, #{gender}, #{phone}, #{email}, #{level}, #{monthlySalary}, #{techStack}, #{status}, #{remark})")
-    @Options(useGeneratedKeys = true, keyProperty = "id")
+    @SelectKey(statement = "SELECT last_insert_rowid()", keyProperty = "id", before = false, resultType = Long.class)
     int insert(Talent talent);
 
     @Update("UPDATE res_talent SET name = #{name}, gender = #{gender}, phone = #{phone}, email = #{email}, " +

@@ -22,7 +22,7 @@ public interface TimesheetMapper {
 
     @Insert("INSERT INTO ts_timesheet (user_id, user_name, talent_id, talent_name, project_id, project_name, month, status) " +
             "VALUES (#{userId}, #{userName}, #{talentId}, #{talentName}, #{projectId}, #{projectName}, #{month}, #{status})")
-    @Options(useGeneratedKeys = true, keyProperty = "id")
+    @SelectKey(statement = "SELECT last_insert_rowid()", keyProperty = "id", before = false, resultType = Long.class)
     int insert(Timesheet timesheet);
 
     @Update("UPDATE ts_timesheet SET status = #{status}, approver_id = #{approverId}, " +

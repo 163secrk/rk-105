@@ -25,7 +25,7 @@ public interface AssignmentMapper {
 
     @Insert("INSERT INTO res_assignment (talent_id, talent_name, project_id, project_name, start_date, end_date, unit_price, talent_level, status, remark) " +
             "VALUES (#{talentId}, #{talentName}, #{projectId}, #{projectName}, #{startDate}, #{endDate}, #{unitPrice}, #{talentLevel}, #{status}, #{remark})")
-    @Options(useGeneratedKeys = true, keyProperty = "id")
+    @SelectKey(statement = "SELECT last_insert_rowid()", keyProperty = "id", before = false, resultType = Long.class)
     int insert(Assignment assignment);
 
     @Update("UPDATE res_assignment SET talent_id = #{talentId}, talent_name = #{talentName}, project_id = #{projectId}, " +

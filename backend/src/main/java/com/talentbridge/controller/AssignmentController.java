@@ -7,6 +7,7 @@ import com.talentbridge.entity.Talent;
 import com.talentbridge.service.AssignmentService;
 import com.talentbridge.service.ProjectService;
 import com.talentbridge.service.TalentService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
@@ -74,11 +75,7 @@ public class AssignmentController {
     }
 
     @PostMapping
-    public Result<Assignment> add(@RequestBody Assignment assignment) {
-        if (assignment.getTalentId() == null || assignment.getProjectId() == null
-                || assignment.getStartDate() == null || assignment.getEndDate() == null) {
-            return Result.error("必填项不能为空");
-        }
+    public Result<Assignment> add(@Valid @RequestBody Assignment assignment) {
         if (assignment.getEndDate().isBefore(assignment.getStartDate())) {
             return Result.error("结束日期不能早于开始日期");
         }

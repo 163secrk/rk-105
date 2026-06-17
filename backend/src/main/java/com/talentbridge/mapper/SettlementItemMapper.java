@@ -21,7 +21,7 @@ public interface SettlementItemMapper {
             "#{userId}, #{userName}, #{talentId}, #{talentName}, #{projectId}, #{projectName}, " +
             "#{unitPriceSnapshot}, #{workdayCountSnapshot}, #{actualAttendanceDays}, " +
             "#{overtimeDays}, #{overtimeAmount}, #{baseAmount}, #{finalAmount}, #{calcDetail})")
-    @Options(useGeneratedKeys = true, keyProperty = "id")
+    @SelectKey(statement = "SELECT last_insert_rowid()", keyProperty = "id", before = false, resultType = Long.class)
     int insert(SettlementItem item);
 
     @Delete("DELETE FROM fin_settlement_item WHERE settlement_id = #{settlementId}")

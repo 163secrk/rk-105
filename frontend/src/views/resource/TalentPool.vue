@@ -89,7 +89,7 @@
     <a-modal
       v-model:visible="modalVisible"
       :title="isEdit ? '编辑人才' : '新增人才'"
-      @ok="handleSubmit"
+      @before-ok="handleBeforeOk"
       @cancel="modalVisible = false"
       :ok-loading="submitting"
       width="560px"
@@ -286,10 +286,11 @@ function handleEdit(record) {
   modalVisible.value = true
 }
 
-async function handleSubmit() {
+async function handleBeforeOk(done) {
   try {
     await formRef.value?.validate()
   } catch {
+    done(false)
     return
   }
   submitting.value = true
@@ -303,8 +304,10 @@ async function handleSubmit() {
       await addTalentApi(payload)
       Message.success('新增成功')
     }
-    modalVisible.value = false
+    done()
     fetchList()
+  } catch {
+    done(false)
   } finally {
     submitting.value = false
   }

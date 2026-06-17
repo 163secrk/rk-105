@@ -25,7 +25,7 @@ public interface UserMapper {
 
     @Insert("INSERT INTO sys_user (username, password, real_name, email, phone, status) " +
             "VALUES (#{username}, #{password}, #{realName}, #{email}, #{phone}, #{status})")
-    @Options(useGeneratedKeys = true, keyProperty = "id")
+    @SelectKey(statement = "SELECT last_insert_rowid()", keyProperty = "id", before = false, resultType = Long.class)
     int insert(User user);
 
     @Update("UPDATE sys_user SET real_name = #{realName}, email = #{email}, phone = #{phone}, " +

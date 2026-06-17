@@ -19,7 +19,7 @@ public interface WorkdaySettingMapper {
 
     @Insert("INSERT INTO fin_workday_setting (month, workday_count, remark) " +
             "VALUES (#{month}, #{workdayCount}, #{remark})")
-    @Options(useGeneratedKeys = true, keyProperty = "id")
+    @SelectKey(statement = "SELECT last_insert_rowid()", keyProperty = "id", before = false, resultType = Long.class)
     int insert(WorkdaySetting setting);
 
     @Update("UPDATE fin_workday_setting SET workday_count = #{workdayCount}, " +

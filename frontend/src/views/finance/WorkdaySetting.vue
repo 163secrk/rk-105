@@ -66,11 +66,11 @@
       v-model:visible="modalVisible"
       :title="editingId ? '编辑工作日设置' : '新增工作日设置'"
       :ok-text="editingId ? '保存' : '确认新增'"
-      @ok="handleSave"
+      @before-ok="handleBeforeOk"
       @cancel="modalVisible = false"
     >
-      <a-form :model="formData" layout="vertical">
-        <a-form-item field="month" label="月份" rules="required">
+      <a-form ref="formRef" :model="formData" layout="vertical" :rules="formRules">
+        <a-form-item field="month" label="月份">
           <a-month-picker
             v-model="formData.month"
             placeholder="请选择月份"
@@ -79,7 +79,7 @@
             :disabled="!!editingId"
           />
         </a-form-item>
-        <a-form-item field="workdayCount" label="法定工作日天数" rules="required">
+        <a-form-item field="workdayCount" label="法定工作日天数">
           <a-input-number
             v-model="formData.workdayCount"
             :min="1"
@@ -121,11 +121,29 @@ const loading = ref(false)
 const workdayList = ref([])
 const modalVisible = ref(false)
 const editingId = ref(null)
+const formRef = ref(null)
 const formData = ref({
   month: '',
   workdayCount: null,
   remark: ''
 })
+
+const formRules = {
+  month: [{ required: true, message: '请选择月份' }],
+  workdayCount: [
+    { required: true, message: '请输入工作日天数' },
+    {
+      validator: (value, callback) => {
+        const count = Number(value)
+        if (!count || count < 1 || count > 31) {
+          callback('工作日天数必须在1-31之间')
+          return
+        }
+        callback()
+      }
+    }
+  ]
+}
 
 function formatMonth(month) {
   if (!month) return '-'
@@ -161,6 +179,7 @@ function resetForm() {
     workdayCount: null,
     remark: ''
   }
+  formRef.value?.clearValidate()
 }
 
 function openAddModal() {
@@ -178,27 +197,26 @@ function openEditModal(record) {
   modalVisible.value = true
 }
 
-async function handleSave() {
-  if (!formData.value.month) {
-    Message.warning('请选择月份')
-    return
-  }
-  const count = Number(formData.value.workdayCount)
-  if (!count || count < 1 || count > 31) {
-    Message.warning('请输入有效的工作日天数(1-31)')
+async function handleBeforeOk(done) {
+  try {
+    await formRef.value?.validate()
+  } catch {
+    done(false)
     return
   }
   try {
     await saveWorkdayApi({
       id: editingId.value,
       month: formData.value.month,
-      workdayCount: count,
+      workdayCount: Number(formData.value.workdayCount),
       remark: formData.value.remark
     })
     Message.success(editingId.value ? '更新成功' : '新增成功')
-    modalVisible.value = false
+    done()
     fetchList()
-  } catch (e) {}
+  } catch {
+    done(false)
+  }
 }
 
 function handleDelete(record) {

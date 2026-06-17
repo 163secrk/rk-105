@@ -67,7 +67,7 @@
     <a-modal
       v-model:visible="modalVisible"
       :title="isEdit ? '编辑项目' : '新增项目'"
-      @ok="handleSubmit"
+      @before-ok="handleBeforeOk"
       @cancel="modalVisible = false"
       :ok-loading="submitting"
       width="600px"
@@ -252,10 +252,11 @@ function handleEdit(record) {
   modalVisible.value = true
 }
 
-async function handleSubmit() {
+async function handleBeforeOk(done) {
   try {
     await formRef.value?.validate()
   } catch {
+    done(false)
     return
   }
   submitting.value = true
@@ -269,8 +270,10 @@ async function handleSubmit() {
       await addProjectApi(payload)
       Message.success('新增成功')
     }
-    modalVisible.value = false
+    done()
     fetchList()
+  } catch {
+    done(false)
   } finally {
     submitting.value = false
   }
