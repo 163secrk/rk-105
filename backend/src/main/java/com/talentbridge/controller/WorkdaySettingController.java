@@ -60,6 +60,16 @@ public class WorkdaySettingController {
         return Result.success(workdaySettingService.saveOrUpdate(setting));
     }
 
+    @PostMapping("/generate")
+    public Result<List<WorkdaySetting>> generate(@RequestParam Integer year, HttpServletRequest request) {
+        Long userId = getUserIdFromRequest(request);
+        User user = userService.getUserWithRoles(userId);
+        if (!isFinance(user)) {
+            return Result.error(403, "无权限操作，仅财务人员可生成工作日");
+        }
+        return Result.success(workdaySettingService.generateYearWorkdays(year));
+    }
+
     @DeleteMapping("/{id}")
     public Result<Void> delete(@PathVariable Long id, HttpServletRequest request) {
         Long userId = getUserIdFromRequest(request);

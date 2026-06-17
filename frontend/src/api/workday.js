@@ -28,3 +28,11 @@ export function deleteWorkdayApi(id) {
     method: 'delete'
   })
 }
+
+export function generateYearWorkdaysApi(year) {
+  return request({
+    url: '/finance/workday/generate',
+    method: 'post',
+    params: { year }
+  })
+}

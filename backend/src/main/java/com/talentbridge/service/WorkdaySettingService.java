@@ -9,4 +9,5 @@ public interface WorkdaySettingService {
     WorkdaySetting findByMonth(String month);
     WorkdaySetting saveOrUpdate(WorkdaySetting setting);
     void deleteById(Long id);
+    List<WorkdaySetting> generateYearWorkdays(Integer year);
 }

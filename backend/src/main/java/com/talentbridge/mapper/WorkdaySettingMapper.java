@@ -26,6 +26,9 @@ public interface WorkdaySettingMapper {
             "remark = #{remark}, update_time = CURRENT_TIMESTAMP WHERE id = #{id}")
     int update(WorkdaySetting setting);
 
+    @Select("SELECT * FROM fin_workday_setting WHERE month LIKE CONCAT(#{year}, '-%') ORDER BY month")
+    List<WorkdaySetting> findByYear(Integer year);
+
     @Delete("DELETE FROM fin_workday_setting WHERE id = #{id}")
     int deleteById(Long id);
 }

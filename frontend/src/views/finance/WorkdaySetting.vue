@@ -8,6 +8,10 @@
         </div>
         <div class="section-desc">按月设置法定工作日天数，生成对账单时将作为计算因子</div>
       </div>
+      <a-button type="primary" @click="openGenerateModal">
+        <template #icon><icon-calendar-clock /></template>
+        自动生成
+      </a-button>
       <a-button type="primary" @click="openAddModal">
         <template #icon><icon-plus /></template>
         新增设置
@@ -99,6 +103,30 @@
         </a-form-item>
       </a-form>
     </a-modal>
+
+    <a-modal
+      v-model:visible="generateModalVisible"
+      title="自动生成年度工作日"
+      :ok-text="确认生成"
+      @before-ok="handleGenerateOk"
+      @cancel="generateModalVisible = false"
+    >
+      <div class="generate-tips">
+        <icon-info-circle /> 选择年份后，系统将自动计算每月的法定工作日天数（去除周末），已有设置的月份不会被覆盖，生成后可根据法定节假日手动调整。
+      </div>
+      <a-form ref="generateFormRef" :model="generateForm" layout="vertical">
+        <a-form-item field="year" label="选择年份" :rules="[{ required: true, message: '请选择年份' }]">
+          <a-date-picker
+            v-model="generateForm.year"
+            mode="year"
+            placeholder="请选择年份"
+            style="width: 100%"
+            value-format="YYYY"
+            :disabled-date="(current) => current && current.isBefore('2020-01-01')"
+          />
+        </a-form-item>
+      </a-form>
+    </a-modal>
   </div>
 </template>
 
@@ -109,12 +137,15 @@ import {
   IconCalendar,
   IconPlus,
   IconEdit,
-  IconDelete
+  IconDelete,
+  IconCalendarClock,
+  IconInfoCircle
 } from '@arco-design/web-vue/es/icon'
 import {
   getWorkdayListApi,
   saveWorkdayApi,
-  deleteWorkdayApi
+  deleteWorkdayApi,
+  generateYearWorkdaysApi
 } from '@/api/workday'
 
 const loading = ref(false)
@@ -126,6 +157,12 @@ const formData = ref({
   month: '',
   workdayCount: null,
   remark: ''
+})
+
+const generateModalVisible = ref(false)
+const generateFormRef = ref(null)
+const generateForm = ref({
+  year: ''
 })
 
 const formRules = {
@@ -185,6 +222,29 @@ function resetForm() {
 function openAddModal() {
   resetForm()
   modalVisible.value = true
+}
+
+function openGenerateModal() {
+  generateForm.value = { year: '' }
+  generateFormRef.value?.clearValidate()
+  generateModalVisible.value = true
+}
+
+async function handleGenerateOk(done) {
+  try {
+    await generateFormRef.value?.validate()
+  } catch {
+    done(false)
+    return
+  }
+  try {
+    await generateYearWorkdaysApi(Number(generateForm.value.year))
+    Message.success(`${generateForm.value.year}年工作日生成成功`)
+    done()
+    fetchList()
+  } catch {
+    done(false)
+  }
 }
 
 function openEditModal(record) {
@@ -249,7 +309,7 @@ onMounted(() => {
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 20px;
-  gap: 16px;
+  gap: 12px;
 }
 
 .toolbar-left {
@@ -285,5 +345,18 @@ onMounted(() => {
   border-radius: 4px;
   font-weight: 500;
   font-size: 13px;
+}
+
+.generate-tips {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  background: #e8f3ff;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #4e5969;
+  line-height: 1.6;
 }
 </style>
