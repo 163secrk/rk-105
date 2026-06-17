@@ -91,6 +91,12 @@ const routes = [
             name: 'SettlementDetail',
             component: () => import('@/views/finance/SettlementDetail.vue'),
             meta: { title: '对账单详情' }
+          },
+          {
+            path: 'cost-analysis',
+            name: 'CostAnalysis',
+            component: () => import('@/views/finance/CostAnalysis.vue'),
+            meta: { title: '成本分析' }
           }
         ]
       },

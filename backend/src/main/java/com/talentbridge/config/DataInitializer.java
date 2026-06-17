@@ -138,14 +138,24 @@ public class DataInitializer implements CommandLineRunner {
         if (existing2 == null) {
             menuMapper.insertWithId(10L, "工作日设置", "/finance/workday", "CalendarClock", 7L, 2);
         }
+        Menu existing3 = menuMapper.findById(11L);
+        if (existing3 == null) {
+            menuMapper.insertWithId(11L, "成本分析", "/finance/cost-analysis", "LineChart", 7L, 3);
+        }
         if (menuMapper.countRoleMenus() > 0) {
             if (menuMapper.findMenusByUserId(1L).stream().noneMatch(m -> m.getId() != null && m.getId().equals(9L))) {
                 menuMapper.insertRoleMenu(1L, 9L);
                 menuMapper.insertRoleMenu(1L, 10L);
+                menuMapper.insertRoleMenu(1L, 11L);
             }
             if (menuMapper.findMenusByUserId(3L).stream().noneMatch(m -> m.getId() != null && m.getId().equals(9L))) {
                 menuMapper.insertRoleMenu(3L, 9L);
                 menuMapper.insertRoleMenu(3L, 10L);
+                menuMapper.insertRoleMenu(3L, 11L);
+            }
+            if (menuMapper.findMenusByUserId(1L).stream().noneMatch(m -> m.getId() != null && m.getId().equals(11L))) {
+                menuMapper.insertRoleMenu(1L, 11L);
+                menuMapper.insertRoleMenu(3L, 11L);
             }
         }
         log.info("财务子菜单数据初始化完成");

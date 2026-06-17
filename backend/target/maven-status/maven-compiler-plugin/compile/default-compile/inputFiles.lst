@@ -32,6 +32,7 @@ D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\mapper
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\dto\LoginRequest.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\service\AssignmentService.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\service\impl\TimesheetServiceImpl.java
+D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\controller\DashboardController.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\controller\AssignmentController.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\mapper\TimesheetMapper.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\config\JwtAuthenticationFilter.java
@@ -41,13 +42,16 @@ D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\contro
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\config\CorsConfig.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\TalentBridgeApplication.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\service\ProjectService.java
+D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\dto\DashboardStats.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\entity\WorkdaySetting.java
+D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\dto\MonthlyProfit.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\mapper\MenuMapper.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\mapper\ProjectMapper.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\service\impl\MenuServiceImpl.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\entity\Settlement.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\service\impl\SettlementServiceImpl.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\mapper\TimesheetDayMapper.java
+D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\dto\ProjectProfit.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\entity\Assignment.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\service\impl\ProjectServiceImpl.java
 D:\data\projects\bz-6\repos\rk-105\backend\src\main\java\com\talentbridge\mapper\SettlementItemMapper.java
